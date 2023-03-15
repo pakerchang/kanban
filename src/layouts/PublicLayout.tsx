@@ -1,12 +1,12 @@
 import { Container } from "@chakra-ui/react";
 
-function PublicLayout(props: CommonProps) {
+const PublicLayout: React.FC<CommonProps> = (props) => {
   const { children } = props;
   return (
     <Container maxW="container.lg" px={4} py={10}>
-      {children}
+      {children !== undefined && children}
     </Container>
   );
-}
+};
 
 export default PublicLayout;
