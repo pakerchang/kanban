@@ -14,6 +14,7 @@ function useColumnTasks(column: ColumnType) {
     console.log(`Adding new empty task to ${column} column`);
 
     setTasks((allTasks) => {
+      console.info("setTasks props in useColumnTasks: ", allTasks);
       const columnTasks = allTasks[column];
       if (columnTasks.length > MAX_TASK_PER_COLUMN) {
         console.log("Too many task!");
@@ -32,6 +33,9 @@ function useColumnTasks(column: ColumnType) {
       };
     });
   }, [column, setTasks]);
+
+  // const updateTask = useCallback(() => {});
+
   return {
     tasks: tasks[column],
     addEmptyTask,
