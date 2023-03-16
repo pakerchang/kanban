@@ -10,7 +10,7 @@ function Header() {
       bgClip="text"
       mt={4}
     >
-      Kanban Pratice
+      Kanban Practice
     </Heading>
   );
 }

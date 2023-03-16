@@ -1,4 +1,4 @@
-import { defineStyleConfig, extendTheme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   global: (props: { colorMode: string }) => ({

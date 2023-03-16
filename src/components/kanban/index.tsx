@@ -1,5 +1,5 @@
 import { SimpleGrid } from "@chakra-ui/react";
-import Task from "./Task";
+// import Task from "./Task";
 import Column from "./Column";
 import { ColumnType } from "@/utils/enums";
 

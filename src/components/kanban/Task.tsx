@@ -1,6 +1,6 @@
-import { TaskModel } from "@/utils/models";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, IconButton, Textarea } from "@chakra-ui/react";
+import { TaskModel } from "@/utils/models";
 
 interface TaskProps {
   index: number;
