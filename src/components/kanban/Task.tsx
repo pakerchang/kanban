@@ -1,6 +1,7 @@
+import React from "react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, IconButton, Textarea } from "@chakra-ui/react";
-import { TaskModel } from "@/utils/models";
+import { TaskModel } from "../../utils/models";
 
 interface TaskProps {
   index: number;
@@ -8,7 +9,7 @@ interface TaskProps {
 }
 
 function Task(props: TaskProps) {
-  const { index, task } = props;
+  const { task } = props;
   return (
     <Box
       as="div"

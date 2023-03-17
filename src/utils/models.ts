@@ -1,4 +1,4 @@
-import { ColumnType } from "@/utils/enums";
+import { ColumnType } from "./enums";
 
 /**
  * @interface TaskModel
@@ -15,5 +15,5 @@ export interface TaskModel {
 }
 
 export interface DragItem {
-  //
+  temp: string;
 }

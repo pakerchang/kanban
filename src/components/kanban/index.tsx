@@ -1,7 +1,8 @@
+import React from "react";
 import { SimpleGrid } from "@chakra-ui/react";
 // import Task from "./Task";
 import Column from "./Column";
-import { ColumnType } from "@/utils/enums";
+import { ColumnType } from "../../utils/enums";
 
 function Kanban() {
   return (

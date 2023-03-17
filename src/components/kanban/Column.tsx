@@ -1,3 +1,4 @@
+import React from "react";
 import { AddIcon } from "@chakra-ui/icons";
 import {
   Badge,
@@ -7,9 +8,9 @@ import {
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { ColumnType } from "@/utils/enums";
 import Task from "./Task";
-import useColumnTasks from "@/hooks/useColumnTask";
+import useColumnTasks from "../../hooks/useColumnTask";
+import { ColumnType } from "../../utils/enums";
 
 const ColumnColorScheme: Record<ColumnType, string> = {
   Todo: "gray",

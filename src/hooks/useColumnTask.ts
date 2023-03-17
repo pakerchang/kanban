@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { ColumnType } from "@/utils/enums";
-import { TaskModel } from "@/utils/models";
+import { ColumnType } from "../utils/enums";
+import { TaskModel } from "../utils/models";
 import useTaskCollection from "./useTaskCollection";
-import { pickChakraRandomColor, swap } from "@/utils/helpers";
+import { pickChakraRandomColor, swap } from "../utils/helpers";
 
 const MAX_TASK_PER_COLUMN = 100;
 
@@ -35,14 +35,14 @@ function useColumnTasks(column: ColumnType) {
   }, [column, setTasks]);
 
   const updateTask = useCallback(
-    (id: TaskModel["id"], updateTask: Omit<Partial<TaskModel>, "id">) => {
+    (id: TaskModel["id"], updatedTask: Omit<Partial<TaskModel>, "id">) => {
       setTasks((allTasks) => {
         const columnTasks = allTasks[column];
 
         return {
           ...allTasks,
           [column]: columnTasks.map((task) =>
-            task.id === id ? { ...task, ...updateTask } : task
+            task.id === id ? { ...task, ...updatedTask } : task
           ),
         };
       });
