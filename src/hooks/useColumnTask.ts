@@ -7,6 +7,16 @@ import { pickChakraRandomColor, swap } from "../utils/helpers";
 
 const MAX_TASK_PER_COLUMN = 100;
 
+/**
+ * @function useColumnTasks
+ * @property {object} column
+ * @method addEmptyTask -- Add new task label
+ * @method updateTask -- update task content
+ * @method deleteTask -- delete task
+ * @method dropTaskFrom -- moving task to another block, ex: completed
+ * @method swapTasks -- swaping task
+ * return {object}
+ */
 function useColumnTasks(column: ColumnType) {
   const [tasks, setTasks] = useTaskCollection();
 
