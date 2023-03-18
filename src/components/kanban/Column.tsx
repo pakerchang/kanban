@@ -36,19 +36,6 @@ function Column({ column }: { column: ColumnType }) {
           {column}
         </Badge>
       </Heading>
-      <IconButton
-        size="sx"
-        w="full"
-        color={useColorModeValue("gray.500", "gray.400")}
-        bgColor={useColorModeValue("gray.100", "gray.700")}
-        _hover={{ bgColor: useColorModeValue("gray.200", "gray.600") }}
-        py={2}
-        variant="solid"
-        colorScheme="black"
-        aria-label="add-task"
-        icon={<AddIcon />}
-        onClick={addEmptyTask}
-      />
       <Stack
         direction={{ base: "row", md: "column" }}
         h={{ base: 300, md: 600 }}
@@ -58,8 +45,22 @@ function Column({ column }: { column: ColumnType }) {
         bgColor={useColorModeValue("gray.50", "gray.900")}
         rounded="lg"
         boxShadow="md"
-        overflow="auto"
       >
+        {column === ColumnType.TO_DO && (
+          <IconButton
+            size="sx"
+            w="full"
+            color={useColorModeValue("gray.500", "gray.400")}
+            bgColor={useColorModeValue("gray.100", "gray.700")}
+            _hover={{ bgColor: useColorModeValue("gray.200", "gray.600") }}
+            py={2}
+            variant="solid"
+            colorScheme="black"
+            aria-label="add-task"
+            icon={<AddIcon />}
+            onClick={addEmptyTask}
+          />
+        )}
         {ColumnTasks}
       </Stack>
     </Box>

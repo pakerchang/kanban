@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, IconButton, Textarea } from "@chakra-ui/react";
 import { TaskModel } from "../../utils/models";
@@ -10,6 +10,8 @@ interface TaskProps {
 
 function Task(props: TaskProps) {
   const { task } = props;
+  const [value, setValue] = useState(task.title || "");
+
   return (
     <Box
       as="div"
@@ -41,7 +43,8 @@ function Task(props: TaskProps) {
         }}
       />
       <Textarea
-        value={task.title}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         fontWeight="semibold"
         cursor="inherit"
         border="none"

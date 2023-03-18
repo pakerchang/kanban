@@ -10,6 +10,8 @@ function Kanban() {
       columns={{ base: 1, md: 4 }}
       py={10}
       spacing={{ base: 16, md: 4 }}
+      rounded="lg"
+      overflow="auto"
     >
       <Column column={ColumnType.TO_DO} />
       <Column column={ColumnType.IN_PROGRESS} />
