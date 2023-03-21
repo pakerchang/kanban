@@ -15,5 +15,7 @@ export interface TaskModel {
 }
 
 export interface DragItem {
-  temp: string;
+  index: number;
+  id: TaskModel["id"];
+  from: ColumnType;
 }

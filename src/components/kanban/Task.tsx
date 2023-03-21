@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { DeleteIcon } from "@chakra-ui/icons";
-import { Box, IconButton, Textarea } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
 import { TaskModel } from "../../utils/models";
+import AutoResizeTextarea from "./AutoResizeTextarea";
 
 interface TaskProps {
   index: number;
   task: TaskModel;
+  onDelete: (id: TaskModel["id"]) => void;
+  onUpdate: (id: TaskModel["id"], updatedTask: TaskModel) => void;
 }
 
 function Task(props: TaskProps) {
-  const { task } = props;
-  const [value, setValue] = useState(task.title || "");
+  const { task, onUpdate: handleUpdate, onDelete: handleDelete } = props;
+
+  const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newTitle = e.target.value;
+    handleUpdate(task.id, { ...task, title: newTitle });
+  };
+
+  const handleDeleteClick = () => {
+    handleDelete(task.id);
+  };
 
   return (
     <Box
@@ -41,18 +52,23 @@ function Task(props: TaskProps) {
         _groupHover={{
           opacity: 1,
         }}
+        onClick={handleDeleteClick}
       />
-      <Textarea
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+      <AutoResizeTextarea
+        value={task.title}
+        onChange={handleTitleChange}
         fontWeight="semibold"
         cursor="inherit"
-        border="none"
         p={0}
+        resize="none"
         minH={70}
         maxH={200}
+        border="none"
         focusBorderColor="none"
         color="gray.700"
+        _focus={{
+          boxShadow: "none",
+        }}
       />
     </Box>
   );

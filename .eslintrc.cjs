@@ -32,5 +32,11 @@ module.exports = {
     "@typescript-eslint/dot-notation": "error",
     "@typescript-eslint/quotes": ["error", "double"],
     "@typescirpt-eslint/no-shadow": "off",
+    "react/display-name": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-used-vars": [
+      "warn",
+      { wars: "all", args: "after-used", ignoreRestSiblings: true },
+    ],
   },
 };
