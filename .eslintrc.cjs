@@ -34,9 +34,6 @@ module.exports = {
     "@typescirpt-eslint/no-shadow": "off",
     "react/display-name": "off",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-used-vars": [
-      "warn",
-      { wars: "all", args: "after-used", ignoreRestSiblings: true },
-    ],
+    "@typescript-eslint/no-used-vars": "warn",
   },
 };
