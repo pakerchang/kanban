@@ -1,9 +1,9 @@
 import React from "react";
 import { SimpleGrid } from "@chakra-ui/react";
-import Column from "./Column";
-import { ColumnType } from "../../utils/enums";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import Column from "./Column";
+import { ColumnType } from "../../utils/enums";
 
 function Kanban() {
   return (

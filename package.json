@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint:init": "npx husky install && npx husky add .husky/pre-push 'npx lint-staged'",
+    "lint:init": "npx husky install && npx husky add .husky/pre-commit 'npx lint-staged'",
     "lint:check": "npx eslint --fix ./src"
   },
   "dependencies": {

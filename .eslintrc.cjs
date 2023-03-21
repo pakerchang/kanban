@@ -34,6 +34,7 @@ module.exports = {
     "@typescirpt-eslint/no-shadow": "off",
     "react/display-name": "off",
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-used-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/prefer-default-export": "off",
   },
 };
