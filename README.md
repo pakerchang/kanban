@@ -21,3 +21,6 @@
   pnpm install
   pnpm dev
 ```
+
+- [ ] Import Tiptap
+- [ ] Markdown compiler
