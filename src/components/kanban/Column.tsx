@@ -11,6 +11,7 @@ import {
 import Task from "./Task";
 import useColumnTasks from "../../hooks/useColumnTask";
 import { ColumnType } from "../../utils/enums";
+import useColumnDrop from "../../hooks/useColumnDrop";
 
 const ColumnColorScheme: Record<ColumnType, string> = {
   Todo: "gray",
@@ -20,8 +21,10 @@ const ColumnColorScheme: Record<ColumnType, string> = {
 };
 
 function Column({ column }: { column: ColumnType }) {
-  const { tasks, addEmptyTask, updateTask, deleteTask } =
+  const { tasks, addEmptyTask, updateTask, deleteTask, dropTaskFrom } =
     useColumnTasks(column);
+  const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
+
   const ColumnTasks = tasks.map((task, idx) => (
     <Task
       key={task.id}
@@ -44,6 +47,7 @@ function Column({ column }: { column: ColumnType }) {
         </Badge>
       </Heading>
       <Stack
+        ref={dropRef}
         direction={{ base: "row", md: "column" }}
         h={{ base: 300, md: 600 }}
         p={4}
@@ -66,6 +70,7 @@ function Column({ column }: { column: ColumnType }) {
             aria-label="add-task"
             icon={<AddIcon />}
             onClick={addEmptyTask}
+            opacity={isOver ? 0.85 : 1}
           />
         )}
         {ColumnTasks}
