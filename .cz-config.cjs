@@ -19,8 +19,8 @@ module.exports = {
     { name: "Styles(CSS)" },
     { name: "Deps" },
     { name: "Documents" },
-    { name: "Other" },
     { name: "Composable" },
+    { name: "Other" },
   ],
   messages: {
     type: "選擇更改類型:\n",
