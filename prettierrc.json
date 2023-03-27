@@ -1,6 +1,7 @@
 {
+  "tabs": true,
   "tabWidth": 2,
-  "printWidth": 100,
+  "printWidth": 240,
   "singleQuote": false,
   "arrowParens": "always",
   "endOfLine": "lf",

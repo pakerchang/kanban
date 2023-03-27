@@ -3,16 +3,14 @@ import { useDrag, useDrop, XYCoord } from "react-dnd";
 import { ItemType } from "../utils/enums";
 import { TaskModel, DragItem } from "../utils/models";
 
-export function useTaskDragAndDrop<T extends HTMLElement>(
-  {
-    task,
-    index,
-  }: {
-    task: TaskModel;
-    index: number;
-  },
-  handleDropHover: (i: number, j: number) => void
-) {
+export function useTaskDragAndDrop<T extends HTMLElement>({
+  task,
+  index,
+}: {
+  task: TaskModel;
+  index: number;
+}) {
+  // handleDropHover: (i: number, j: number) => void
   const ref = useRef<T>(null);
 
   const [{ isDragging }, drag] = useDrag<
