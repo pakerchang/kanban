@@ -14,6 +14,13 @@ export interface TaskModel {
   color: string;
 }
 
+/**
+ * @interface DragItem
+ * @description define DragItem props content
+ * @type {number} index
+ * @type {TaskModel} id: access TaskModel.id
+ * @type {ColumnType} from: define drag item came from which section, content structure define from ColumnType
+ */
 export interface DragItem {
   index: number;
   id: TaskModel["id"];

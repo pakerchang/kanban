@@ -22,5 +22,6 @@
   pnpm dev
 ```
 
+- [ ] Finish kanban project clone
 - [ ] Import Tiptap
 - [ ] Markdown compiler
