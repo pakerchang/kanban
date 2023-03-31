@@ -10,13 +10,22 @@ interface TaskProps {
   task: TaskModel;
   onDelete: (id: TaskModel["id"]) => void;
   onUpdate: (id: TaskModel["id"], updatedTask: TaskModel) => void;
+  onDropHover: (i: number, j: number) => void;
 }
 
 function Task(props: TaskProps) {
-  const { task, index, onUpdate: handleUpdate, onDelete: handleDelete } = props;
+  const {
+    task,
+    index,
+    onUpdate: handleUpdate,
+    onDelete: handleDelete,
+    onDropHover: handleDropHover,
+  } = props;
+
   const { ref, isDragging } = useTaskDragAndDrop<HTMLDivElement>({
     task,
     index,
+    handleDropHover,
   });
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

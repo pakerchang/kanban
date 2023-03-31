@@ -36,5 +36,6 @@ module.exports = {
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "import/prefer-default-export": "off",
+    "no-param-reassign": "warn",
   },
 };

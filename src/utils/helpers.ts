@@ -33,6 +33,6 @@ export function swap<T>(arr: T[], i: number, j: number): T[] {
   const temp = copy[i];
   copy[i] = copy[j];
   copy[j] = temp;
-
+  console.log(copy);
   return copy;
 }

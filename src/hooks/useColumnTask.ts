@@ -6,7 +6,6 @@ import useTaskCollection from "./useTaskCollection";
 import { pickChakraRandomColor, swap } from "../utils/helpers";
 
 const MAX_TASK_PER_COLUMN = 100;
-
 /**
  * @function useColumnTasks
  * @property {object} column
@@ -97,10 +96,12 @@ function useColumnTasks(column: ColumnType) {
   const swapTasks = useCallback(
     (i: number, j: number) => {
       console.debug(`Swaping task ${i} with ${j} in ${column} column`);
-
       setTasks((allTasks) => {
         const columnTasks = allTasks[column];
-        return { ...allTasks, [column]: swap(columnTasks, i, j) };
+        return {
+          ...allTasks,
+          [column]: swap(columnTasks, i, j),
+        };
       });
     },
     [column, setTasks]

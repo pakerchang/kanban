@@ -21,8 +21,14 @@ const ColumnColorScheme: Record<ColumnType, string> = {
 };
 
 function Column({ column }: { column: ColumnType }) {
-  const { tasks, addEmptyTask, updateTask, deleteTask, dropTaskFrom } =
-    useColumnTasks(column);
+  const {
+    tasks,
+    addEmptyTask,
+    updateTask,
+    deleteTask,
+    dropTaskFrom,
+    swapTasks,
+  } = useColumnTasks(column);
   const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
 
   const ColumnTasks = tasks.map((task, idx) => (
@@ -32,6 +38,7 @@ function Column({ column }: { column: ColumnType }) {
       index={idx}
       onDelete={deleteTask}
       onUpdate={updateTask}
+      onDropHover={swapTasks}
     />
   ));
   return (
@@ -46,9 +53,10 @@ function Column({ column }: { column: ColumnType }) {
           {column}
         </Badge>
       </Heading>
+
       <Stack
         ref={dropRef}
-        direction={{ base: "row", md: "column" }}
+        direction="column"
         h={{ base: 300, md: 600 }}
         p={4}
         mt={2}
@@ -56,6 +64,7 @@ function Column({ column }: { column: ColumnType }) {
         bgColor={useColorModeValue("gray.50", "gray.900")}
         rounded="lg"
         boxShadow="md"
+        overflowY="auto"
       >
         {column === ColumnType.TO_DO && (
           <IconButton

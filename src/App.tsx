@@ -1,6 +1,6 @@
 import React from "react";
 import PublicLayout from "./layouts/PublicLayout";
-import Header from "./components/header/Header";
+import Header from "./components/header";
 import Kanban from "./components/kanban";
 
 function App() {
