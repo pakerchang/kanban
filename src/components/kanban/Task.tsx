@@ -4,6 +4,7 @@ import { Box, IconButton } from "@chakra-ui/react";
 import { TaskModel } from "../../utils/models";
 import AutoResizeTextarea from "./AutoResizeTextarea";
 import { useTaskDragAndDrop } from "../../hooks/useTaskDragAndDrop";
+import Editor from "../Editor";
 
 interface TaskProps {
   index: number;
@@ -70,6 +71,7 @@ function Task(props: TaskProps) {
         }}
         onClick={handleDeleteClick}
       />
+      <Editor />
       <AutoResizeTextarea
         value={task.title}
         onChange={handleTitleChange}

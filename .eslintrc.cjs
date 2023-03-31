@@ -28,6 +28,7 @@ module.exports = {
   plugins: ["react", "@typescript-eslint"],
   rules: {
     "prettier/prettier": ["error", {}, { usePrettierrc: true }],
+    "react/react-in-jsx-scope": "off",
     "linebreak-style": ["error", "unix"],
     "@typescript-eslint/dot-notation": "error",
     "@typescript-eslint/quotes": ["error", "double"],
