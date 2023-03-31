@@ -2,7 +2,7 @@ module.exports = {
   types: [
     { value: "feat", name: "feat: 增加" },
     { value: "fix", name: "fix: bug fix" },
-    { value: "style", name: "style: 樣式修改(不影響)" },
+    { value: "style", name: "style: 樣式修改" },
     { value: "docs", name: "docs: 修改文件" },
     { value: "test", name: "test: 新增或修改現有的測試" },
     { value: "deploy", name: "deploy: 部署" },

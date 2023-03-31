@@ -7,7 +7,7 @@ import {
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Task from "./Task";
+import Task from "./task";
 import useColumnTasks from "../../hooks/useColumnTask";
 import { ColumnType } from "../../utils/enums";
 import useColumnDrop from "../../hooks/useColumnDrop";
@@ -40,6 +40,7 @@ function Column({ column }: { column: ColumnType }) {
       onDropHover={swapTasks}
     />
   ));
+
   return (
     <Box>
       <Heading fontSize="md" mb={4} letterSpacing="wide">

@@ -1,6 +1,17 @@
 import { ColumnType } from "./enums";
 
 /**
+ * @interface TaskData
+ * @description define the Tasks content type
+ * @type {string} title
+ * @type {string} description
+ */
+export interface TaskData {
+  title: string;
+  description: string;
+}
+
+/**
  * @interface TaskModel
  * @description Task data structure
  * @type {string} id - Task identify
@@ -9,6 +20,7 @@ import { ColumnType } from "./enums";
  */
 export interface TaskModel {
   id: string;
+  // data: TaskContent;
   title: string;
   column: ColumnType;
   color: string;

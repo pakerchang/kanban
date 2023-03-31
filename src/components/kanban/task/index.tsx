@@ -1,10 +1,10 @@
 import React from "react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, IconButton } from "@chakra-ui/react";
-import { TaskModel } from "../../utils/models";
-import AutoResizeTextarea from "./AutoResizeTextarea";
-import { useTaskDragAndDrop } from "../../hooks/useTaskDragAndDrop";
-import Editor from "../Editor";
+import { TaskModel } from "../../../utils/models";
+import { useTaskDragAndDrop } from "../../../hooks/useTaskDragAndDrop";
+import AutoResizeTextarea from "../AutoResizeTextarea";
+import TaskCotnent from "./TaskCotnent";
 
 interface TaskProps {
   index: number;
@@ -29,8 +29,11 @@ function Task(props: TaskProps) {
     handleDropHover,
   });
 
-  const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleTaskChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newTitle = e.target.value;
+    // Rebuild a new task content component, it's structure has title, description and should be editor by tiptap
+    // Refactor handleUpdate updated data structure and above
+    // handleUpdate(task.id, { ...task, data: newTitle });
     handleUpdate(task.id, { ...task, title: newTitle });
   };
 
@@ -71,10 +74,9 @@ function Task(props: TaskProps) {
         }}
         onClick={handleDeleteClick}
       />
-      <Editor />
       <AutoResizeTextarea
         value={task.title}
-        onChange={handleTitleChange}
+        onChange={handleTaskChange}
         fontWeight="semibold"
         cursor="inherit"
         p={0}
@@ -88,6 +90,7 @@ function Task(props: TaskProps) {
           boxShadow: "none",
         }}
       />
+      <TaskCotnent />
     </Box>
   );
 }
