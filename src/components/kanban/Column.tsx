@@ -28,6 +28,10 @@ function Column({ column }: { column: ColumnType }) {
     dropTaskFrom,
     swapTasks,
   } = useColumnTasks(column);
+
+  // 這個 component 實際上只會使用到 tasks, addEmptyTask，是否需要將 updateTask, deleteTask, dropTaskFrom, swapTasks
+  // 一起宣告並傳遞到 Task component?
+  // 我想這問題是關乎資料流追蹤時，是否直覺抑或是看起來比較連貫等閱讀體驗的問題
   const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
 
   const ColumnTasks = tasks.map((task, idx) => (

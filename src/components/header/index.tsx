@@ -1,5 +1,5 @@
 import { Flex, Heading } from "@chakra-ui/react";
-import DarkModeIconSwitch from "../DarkModeSwitch";
+import DarkModeIconSwitch from "../darkMode-switch";
 
 function Header() {
   return (

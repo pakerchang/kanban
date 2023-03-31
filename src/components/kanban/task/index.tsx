@@ -4,8 +4,12 @@ import { Box, IconButton } from "@chakra-ui/react";
 import { TaskModel } from "../../../utils/models";
 import { useTaskDragAndDrop } from "../../../hooks/useTaskDragAndDrop";
 import AutoResizeTextarea from "../AutoResizeTextarea";
-import TaskCotnent from "./TaskCotnent";
+import TaskCotnent from "./TaskContent";
 
+// 需要思考一下邏輯處理的分層
+// LocalStorage 的更新是否下放到 TaskCotent 處理, 例如再次呼叫 useColumnTasks
+// 但此處需要取捨的是，已經在 Column component 使用過，是否需要拆分，以保證 component 內部的變數都能是在該檔案找到引用處
+// 減少檔案間切換的成本，讓閱讀更容易統整範圍，這之中的取捨點又關乎到這麼做是否會讓 hooks 的引用更加碎片化，邏輯依賴過於混亂
 interface TaskProps {
   index: number;
   task: TaskModel;
