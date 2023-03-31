@@ -6,7 +6,7 @@ module.exports = {
     { value: "docs", name: "docs: 修改文件" },
     { value: "test", name: "test: 新增或修改現有的測試" },
     { value: "deploy", name: "deploy: 部署" },
-    { value: "refactor", name: "refactor: 重構" },
+    { value: "ref", name: "refactor: 重構" },
     {
       value: "chore",
       name: "chore: 修改建置流程、包管理、構建過程或輔助工具的變動。不包含修改測試檔、src 裡的檔案",
