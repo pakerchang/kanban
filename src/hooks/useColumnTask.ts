@@ -20,13 +20,9 @@ function useColumnTasks(column: ColumnType) {
   const [tasks, setTasks] = useTaskCollection();
 
   const addEmptyTask = useCallback(() => {
-    console.log(`Adding new empty task to ${column} column`);
-
     setTasks((allTasks) => {
-      console.info("setTasks props in useColumnTasks: ", allTasks);
       const columnTasks = allTasks[column];
       if (columnTasks.length > MAX_TASK_PER_COLUMN) {
-        console.log("Too many task!");
         return allTasks;
       }
       const newColumnTasks: TaskModel = {
@@ -61,7 +57,6 @@ function useColumnTasks(column: ColumnType) {
 
   const deleteTask = useCallback(
     (id: TaskModel["id"]) => {
-      console.debug(`Removing task ${id}`);
       setTasks((allTasks) => {
         const columnTasks = allTasks[column];
         return {
@@ -80,7 +75,6 @@ function useColumnTasks(column: ColumnType) {
         const toColumnTasks = allTasks[column];
         const movingTask = fromColumnTasks.find((task) => task.id === id);
 
-        console.info(`Moving task ${movingTask?.id} from ${from} to ${column}`);
         if (!movingTask) return allTasks;
 
         return {
@@ -95,7 +89,6 @@ function useColumnTasks(column: ColumnType) {
 
   const swapTasks = useCallback(
     (i: number, j: number) => {
-      console.debug(`Swaping task ${i} with ${j} in ${column} column`);
       setTasks((allTasks) => {
         const columnTasks = allTasks[column];
         return {
