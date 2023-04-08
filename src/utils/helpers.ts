@@ -23,9 +23,9 @@ export function pickChakraRandomColor(variant = ""): string {
 /**
  * @function swap
  * @description props 3 variable to moving columns type section
- * @property {array} arr
- * @property {number} i
- * @property {number} j
+ * @param {array} arr
+ * @param {number} i
+ * @param {number} j
  * @return {array}
  */
 export function swap<T>(arr: T[], i: number, j: number): T[] {

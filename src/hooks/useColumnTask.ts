@@ -8,7 +8,7 @@ import { pickChakraRandomColor, swap } from "../utils/helpers";
 const MAX_TASK_PER_COLUMN = 100;
 /**
  * @function useColumnTasks
- * @property {object} column
+ * @param {object} column
  * @method addEmptyTask -- Add new task label
  * @method updateTask -- update task content
  * @method deleteTask -- delete task

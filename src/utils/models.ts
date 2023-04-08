@@ -3,7 +3,7 @@ import { ColumnType } from "./enums";
 /**
  * @interface TaskData
  * @description define the Tasks content type
- * @type {string} title
+ * @param {string} title
  * @type {string} description
  */
 export interface TaskData {
@@ -14,9 +14,9 @@ export interface TaskData {
 /**
  * @interface TaskModel
  * @description Task data structure
- * @type {string} id - Task identify
- * @type {string} title - Todos title
- * @type {stirng} color - background color, came from random color picker in helpers
+ * @param {string} id - Task identify
+ * @param {string} title - Todos title
+ * @param {stirng} color - background color, came from random color picker in helpers
  */
 export interface TaskModel {
   id: string;
@@ -29,9 +29,9 @@ export interface TaskModel {
 /**
  * @interface DragItem
  * @description define DragItem props content
- * @type {number} index
- * @type {TaskModel} id: access TaskModel.id
- * @type {ColumnType} from: define drag item came from which section, content structure define from ColumnType
+ * @param {number} index
+ * @param {TaskModel} id: access TaskModel.id
+ * @param {ColumnType} from: define drag item came from which section, content structure define from ColumnType
  */
 export interface DragItem {
   index: number;

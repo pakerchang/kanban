@@ -7,15 +7,17 @@ import { TaskModel, DragItem } from "../utils/models";
 // 實際脈絡經過：useColumnTask.ts > Column.tsx > Task.tsx > useTaskDragAndDrop.ts
 // 對於這樣的傳遞雖然在檔案上的追蹤較為合理，但我對此表示存疑
 // 因為實際調用點在 useTaskDragAndDrop，並回傳 ref element, 為了這一點，是否存在不需要經過 Column.tsx, Task.tsx，且比原來的作法更適當的方式？
+type DragNDrop = {
+  task: TaskModel;
+  index: number;
+  handleDropHover: (i: number, j: number) => void;
+};
+
 export function useTaskDragAndDrop<T extends HTMLElement>({
   task,
   index,
   handleDropHover,
-}: {
-  task: TaskModel;
-  index: number;
-  handleDropHover: (i: number, j: number) => void;
-}) {
+}: DragNDrop) {
   const ref = useRef<T>(null);
 
   const [{ isDragging }, drag] = useDrag<
