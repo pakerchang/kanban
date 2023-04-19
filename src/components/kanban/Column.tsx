@@ -10,6 +10,7 @@ import {
 import Task from "./task";
 import useColumnTasks from "../../hooks/useColumnTask";
 import { ColumnType } from "../../utils/enums";
+import { TaskModel } from "../../utils/models";
 import useColumnDrop from "../../hooks/useColumnDrop";
 
 const ColumnColorScheme: Record<ColumnType, string> = {
@@ -34,7 +35,7 @@ function Column({ column }: { column: ColumnType }) {
   // 我想這問題是關乎資料流追蹤時，是否直覺抑或是看起來比較連貫等閱讀體驗的問題
   const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
 
-  const ColumnTasks = tasks.map((task, idx) => (
+  const ColumnTasks = tasks.map((task: TaskModel, idx: number) => (
     <Task
       key={task.id}
       task={task}

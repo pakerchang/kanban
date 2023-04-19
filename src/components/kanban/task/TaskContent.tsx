@@ -1,6 +1,6 @@
 import Editor from "./Editor";
 
-function TaskCotnent() {
+function TaskContent() {
   // Strcture Cotnent {
   // title: string
   // desc: stirng | React.Node | HTMLElement : It should support markdown
@@ -12,4 +12,4 @@ function TaskCotnent() {
   );
 }
 
-export default TaskCotnent;
+export default TaskContent;
